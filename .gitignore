@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+work/
+public/videos/
+*.log
+hash.txt
+*TestUserPassword.js
+app_backup.js
+.DS_Store
+coverage/

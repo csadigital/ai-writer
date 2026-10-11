@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Run npm run setup first}
+      MYSQL_DATABASE: ${DB_NAME:-ai_writer}
+      MYSQL_USER: ${DB_USER:-ai_writer}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Run npm run setup first}
+    ports:
+      - "127.0.0.1:${DB_PORT:-3307}:3306"
+    volumes:
+      - ai_writer_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+volumes:
+  ai_writer_mysql:

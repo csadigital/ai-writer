@@ -1,0 +1,43 @@
+{
+  "name": "ai-writer",
+  "version": "1.1.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "node --test",
+    "check": "node --check app.js && node --check youtube.js && node --check lib/ai.js && node --check lib/network.js && node --check scripts/setup.js",
+    "setup": "node scripts/setup.js"
+  },
+  "keywords": [
+    "ai",
+    "ecommerce",
+    "product-description",
+    "openai",
+    "multilingual"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Multilingual AI product descriptions from images and YouTube frames.",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "mysql2": "^3.24.5",
+    "puppeteer": "^25.13.0",
+    "ytdl-core": "^4.11.5",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "express-mysql-session": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "mysql2": "$mysql2"
+  }
+}
